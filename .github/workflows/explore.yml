@@ -8,15 +8,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             -   name: CI fail
-                uses: joelwmale/webhook-action@master
-                with:
-                    url: ${{ secrets.WEBHOOK_URL }}
-                    body: >
-                        ${{ 
-                            format('{{"text": "{0}"}}', 
-                                format('Commit: {0}/commit/{1}\nBranch: {2}\nRepository: {0}\nWorkflow URL: {0}/actions/runs/{3}', 
-                                    format('https://github.com/{0}', github.repository), 
-                                    github.sha, 
-                                    github.ref, 
-                                    github.run_id)) 
-                        }}
+                run: | 
+                    format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat')
+                    format('Hello \n {0} {1} {2}', 'Mona', 'the', 'Octocat')
+                    format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat')
