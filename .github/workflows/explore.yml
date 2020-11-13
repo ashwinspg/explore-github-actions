@@ -9,11 +9,7 @@ jobs:
         steps:
             -   name: echo format
                 run: |
-                    echo ${{ format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat') }}
-
-            -   name: echo format
-                run: |
-                    echo "$GITHUB_REPOSITORY"
+                    echo ${{ format('Hello {0}', ${{ format('Hey {0}', 'HaHa') }}) }}
 
 #             -   name: CI fail
 #                 run: |
