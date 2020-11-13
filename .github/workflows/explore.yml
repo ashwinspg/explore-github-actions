@@ -9,7 +9,7 @@ jobs:
         steps:
             -   name: echo format
                 run: |
-                    echo ${{ format('Hello {0}', ${{ format('Hey {0}', 'HaHa') }}) }}
+                    echo ${{ format('Hello {0}', format('Hey {0}', 'HaHa')) }}
 
 #             -   name: CI fail
 #                 run: |
