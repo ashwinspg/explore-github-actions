@@ -8,11 +8,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             -   name: CI fail
-                run: ${{ format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat') }}
+                run: echo ${{ format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat') }}
 
             -   name: CI fail
-                run: ${{ format('Hello \n {0} {1} {2}', 'Mona', 'the', 'Octocat') }}
+                run: echo ${{ format('Hello \n {0} {1} {2}', 'Mona', 'the', 'Octocat') }}
 
             -   name: CI fail
                 run: >
-                    ${{ format('Hello {0} \n {1} {2}', 'Mona', 'the', 'Octocat') }}
+                    echo ${{ format('Hello {0} \n {1} {2}', 'Mona', 'the', 'Octocat') }}
