@@ -11,12 +11,12 @@ jobs:
                 uses: joelwmale/webhook-action@master
                 with:
                     url: ${{ secrets.WEBHOOK_URL }}
-                    body: |
-                        '${{ \
-                            format(''{{"text": "{0}"}}'', \
-                                format(''Commit: {0}/commit/{1}\nBranch: {2}\nRepository: {0}\nWorkflow URL: {0}/actions/runs/{3}'', \
-                                    format(''https://github.com/{0}'', github.repository), \
-                                    github.sha, \
-                                    github.ref, \
-                                    github.run_id)) \
+                    body: >
+                        '${{ 
+                            format(''{{"text": "{0}"}}'', 
+                                format(''Commit: {0}/commit/{1}\nBranch: {2}\nRepository: {0}\nWorkflow URL: {0}/actions/runs/{3}'', 
+                                    format(''https://github.com/{0}'', github.repository), 
+                                    github.sha, 
+                                    github.ref, 
+                                    github.run_id)) 
                         }}'
