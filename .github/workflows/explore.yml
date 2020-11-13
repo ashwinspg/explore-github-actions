@@ -22,3 +22,11 @@ jobs:
             -   name: CI fail
                 run: |-
                     echo ${{ format('{0}\n{1}', 'line1', 'line2') }}
+
+            -   name: CI fail
+                run: >+
+                    echo ${{ format('{0}\n{1}', 'line1', 'line2') }}
+                    
+            -   name: CI fail
+                run: |+
+                    echo ${{ format('{0}\n{1}', 'line1', 'line2') }}
