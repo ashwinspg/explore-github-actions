@@ -7,17 +7,20 @@ jobs:
         name: Build
         runs-on: ubuntu-latest
         steps:
-            -   name: echo format
-                run: |
-                    echo ${{ format('Hello {0}', format('Hey {0}', 'HaHa')) }}
-                    
-            -   name: echo format
-                run: |
-                    echo ${{ github.sha }}
-                    
-            -   name: echo format
-                run: |
-                    echo ${{ format('Commit: {0}/commits/{1}\nBranch: {2}\nRepository: {0}\nWorkflow URL: {0}/actions/runs/{3}', format('https://github.com/{0}', github.repository), github.sha, github.ref, github.run_id) }}
+            -   name: CI fail
+                uses: joelwmale/webhook-action@master
+                with:
+                    url: ${{ secrets.WEBHOOK_URL }}
+                    body: >-
+                        '${{ 
+                            format(''{{"text": "{0}"}}'', 
+                                format(''Commit: {0}/commit/{1}\nBranch: {2}\nRepository: {0}\nWorkflow URL: {0}/actions/runs/{3}'', 
+                                    format(''https://github.com/{0}'', 
+                                        github.repository), 
+                                    github.sha, 
+                                    github.ref, 
+                                    github.run_id)) 
+                        }}'
 
 #             -   name: CI fail
 #                 run: |
