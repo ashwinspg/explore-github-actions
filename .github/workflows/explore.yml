@@ -17,7 +17,7 @@ jobs:
                     
             -   name: echo format
                 run: |
-                    echo ${{ format('Commit: {0}/commits/{1}\nBranch: {2}\nRepository: {0}\nWorkflow URL: {0}/actions/runs/{3}', format('https://github.com/{0}', github.repository), github.sha, github.ref, github.run_id') }}
+                    echo ${{ format('Commit: {0}/commits/{1}\nBranch: {2}\nRepository: {0}\nWorkflow URL: {0}/actions/runs/{3}', format('https://github.com/{0}', github.repository), github.sha, github.ref, github.run_id) }}
 
 #             -   name: CI fail
 #                 run: |
