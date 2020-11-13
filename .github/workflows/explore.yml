@@ -13,7 +13,7 @@ jobs:
 
             -   name: echo format
                 run: |
-                    echo "${{ format('Hello {0}', ${{ fromJSON(github.repository) }}) }}"
+                    echo "${{ format('Hello {0}', ''${{ fromJSON(github.repository) }}'') }}"
 
 #             -   name: CI fail
 #                 run: |
