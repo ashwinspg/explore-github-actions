@@ -10,6 +10,14 @@ jobs:
             -   name: echo format
                 run: |
                     echo ${{ format('Hello {0}', format('Hey {0}', 'HaHa')) }}
+                    
+            -   name: echo format
+                run: |
+                    echo ${{ github.sha }}
+                    
+            -   name: echo format
+                run: |
+                    echo ${{ fromJSON(github.sha) }}
 
 #             -   name: CI fail
 #                 run: |
