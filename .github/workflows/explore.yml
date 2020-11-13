@@ -1,0 +1,20 @@
+name: Build
+
+on: push
+
+jobs:
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+            -   name: echo format
+                run: |
+                    echo ${{ format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat') }}
+
+            -   name: echo format
+                run: |
+                    echo ${{ format('Hello {0}', '${{ format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat') }}') }}
+
+            -   name: CI fail
+                run: |
+                    echo '{"text": "${{ format(''Commit: {0}/commits/{1}\nBranch: {2}\nRepository: {0}\nWorkflow URL: {0}/actions/runs/{3}'', ''${{github.repository}}'', ''${{github.sha}}'', ''${{github.ref}}'', ''${{github.run_id}}'' ) }}"}'
