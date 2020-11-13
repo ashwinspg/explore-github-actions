@@ -10,53 +10,47 @@ jobs:
             -   name: CI fail
                 run: >
                     echo ${{ 
-                        format('
-                            {0}
-                            {1}', 
+                        format('{0}
+                        {1}', 
                             'line1', 'line2')
                     }}
                     
             -   name: CI fail
                 run: |
                     echo ${{ 
-                        format('
-                            {0}
-                            {1}', 
+                        format('{0}
+                        {1}', 
                             'line1', 'line2')
                     }}
                     
             -   name: CI fail
                 run: >-
                     echo ${{ 
-                        format('
-                            {0}
-                            {1}', 
+                        format('{0}
+                        {1}', 
                             'line1', 'line2')
                     }}
                     
             -   name: CI fail
                 run: |-
                     echo ${{ 
-                        format('
-                            {0}
-                            {1}', 
+                        format('{0}
+                        {1}', 
                             'line1', 'line2')
                     }}
 
             -   name: CI fail
                 run: >+
                     echo ${{ 
-                        format('
-                            {0}
-                            {1}', 
+                        format('{0}
+                        {1}', 
                             'line1', 'line2')
                     }}
                     
             -   name: CI fail
                 run: |+
                     echo ${{ 
-                        format('
-                            {0}
-                            {1}', 
+                        format('{0}
+                        {1}', 
                             'line1', 'line2')
                     }}
