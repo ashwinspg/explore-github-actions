@@ -1,56 +1,22 @@
 name: Build
 
-on: push
+on:
+  push:
+    paths:
+    - 'test/*'
 
 jobs:
-    build:
+    build1:
         name: Build
         runs-on: ubuntu-latest
         steps:
             -   name: CI fail
-                run: >
-                    echo ${{ 
-                        format('{0}
-                        {1}', 
-                            'line1', 'line2')
-                    }}
-                    
-            -   name: CI fail
-                run: |
-                    echo ${{ 
-                        format('{0}
-                        {1}', 
-                            'line1', 'line2')
-                    }}
-                    
-            -   name: CI fail
-                run: >-
-                    echo ${{ 
-                        format('{0}
-                        {1}', 
-                            'line1', 'line2')
-                    }}
-                    
-            -   name: CI fail
-                run: |-
-                    echo ${{ 
-                        format('{0}
-                        {1}', 
-                            'line1', 'line2')
-                    }}
+                run: echo build1
 
+    build2:
+        name: Build
+        needs: build1
+        runs-on: ubuntu-latest
+        steps:
             -   name: CI fail
-                run: >+
-                    echo ${{ 
-                        format('{0}
-                        {1}', 
-                            'line1', 'line2')
-                    }}
-                    
-            -   name: CI fail
-                run: |+
-                    echo ${{ 
-                        format('{0}
-                        {1}', 
-                            'line1', 'line2')
-                    }}
+                run: echo build2
