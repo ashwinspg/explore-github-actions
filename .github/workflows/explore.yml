@@ -2,21 +2,21 @@ name: Build
 
 on:
   push:
-    # paths:
-    # - 'test/**'
+    paths:
+    - 'test/**'
 
 jobs:
     build1:
-        name: Build
+        name: Build1
         runs-on: ubuntu-latest
         steps:
-            -   name: CI fail
+            -   name: echo
                 run: echo build1
 
     build2:
-        name: Build
+        name: Build2
         needs: build1
         runs-on: ubuntu-latest
         steps:
-            -   name: CI fail
+            -   name: echo
                 run: echo build2
