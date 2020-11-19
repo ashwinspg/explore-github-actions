@@ -12,10 +12,13 @@ outputs:
 runs:
   using: "composite"
   steps: 
-    - run: echo v2
+    - name: echo1
+      run: echo v2
       shell: bash
-    - run: echo Hello ${{ inputs.who-to-greet }}.
+    - name: echo2
+      run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
     - id: random-number-generator
+      name: echo3
       run: echo "::set-output name=random-id::$(echo $RANDOM)"
       shell: bash
