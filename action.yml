@@ -12,7 +12,7 @@ outputs:
 runs:
   using: "composite"
   steps: 
-    - run: echo v1
+    - run: echo v2
       shell: bash
     - run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
