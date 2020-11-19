@@ -27,7 +27,7 @@ jobs:
         steps:
             -   uses: actions/checkout@v2
             -   id: foo
-                uses: ashwinspg/explore-github-actions@23eabf9310315ad240ba71ca7a1417371ce8d347
+                uses: ashwinspg/explore-github-actions@0d93d20a9aad01b70ac328fd2705ad0b2723c936
                 with:
                     who-to-greet: 'Mona the Octocat'
             -   run: echo random-number ${{ steps.foo.outputs.random-number }} 
