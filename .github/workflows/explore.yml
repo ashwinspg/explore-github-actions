@@ -35,7 +35,6 @@ jobs:
                 uses: ashwinspg/explore-github-actions@master
                 with:
                     who-to-greet: 'Mona the Octocat'
-                env:
-                    work_path: ./test
+                    path: ./test                    
             -   run: echo random-number ${{ steps.foo.outputs.random-number }} 
                 shell: bash

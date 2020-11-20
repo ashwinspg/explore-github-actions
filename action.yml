@@ -5,6 +5,9 @@ inputs:
     description: 'Who to greet'
     required: true
     default: 'World'
+  path:
+    description: 'file path'
+    required: true
 outputs:
   random-number: 
     description: "Random number"
@@ -17,9 +20,10 @@ runs:
       run: |
         echo -e '\n'
         ls
+        echo $work_path
     - name: ls
       shell: bash
-      working-directory: $work_path
+      working-directory: ${{ inputs.path }}
       run: |
         echo -e '\n'
         ls
