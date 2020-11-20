@@ -12,6 +12,12 @@ outputs:
 runs:
   using: "composite"
   steps: 
+    - name: echo $PWD
+      shell: bash
+      run: echo $PWD
+    - name: pwd
+      shell: bash
+      run: pwd
     - name: env
       shell: bash
       run: env
