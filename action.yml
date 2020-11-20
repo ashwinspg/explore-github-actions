@@ -14,10 +14,16 @@ runs:
   steps: 
     - name: ls
       shell: bash
-      run: ls
-    - name: ls test/
+      run: |
+        echo ls
+        ls
+
+    - name: ls ./movies-lambda
       shell: bash
-      run: ls test/
+      run: |
+        echo ls
+        ls ./test
+        
     - name: echo2
       run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
