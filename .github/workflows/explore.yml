@@ -29,8 +29,8 @@ jobs:
                 working-directory: test
         steps:
             -   uses: actions/checkout@v2
-            -   name: ls
-                run: ls
+            -   name: echo
+                run: echo ${{ github.workspace }}
             -   id: foo
                 uses: ashwinspg/explore-github-actions@master
                 with:
