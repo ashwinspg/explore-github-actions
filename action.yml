@@ -19,7 +19,7 @@ runs:
         ls
     - name: ls
       shell: bash
-      working-directory: ${{ $work_path }}
+      working-directory: $work_path
       run: |
         echo -e '\n'
         ls
