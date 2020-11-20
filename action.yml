@@ -17,13 +17,6 @@ runs:
       run: |
         echo ls
         ls
-
-    - name: ls ./movies-lambda
-      shell: bash
-      run: |
-        echo ls
-        ls ./test
-        
     - name: echo2
       run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
