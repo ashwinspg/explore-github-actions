@@ -36,6 +36,6 @@ jobs:
                 with:
                     who-to-greet: 'Mona the Octocat'
                 env:
-                    env_key: env_value
+                    work-path: ./test
             -   run: echo random-number ${{ steps.foo.outputs.random-number }} 
                 shell: bash

@@ -15,7 +15,13 @@ runs:
     - name: ls
       shell: bash
       run: |
-        echo ls
+        echo -e '\n'
+        ls
+    - name: ls
+      shell: bash
+      working-directory: ${{ work-path }}
+      run: |
+        echo -e '\n'
         ls
     - name: echo2
       run: echo Hello ${{ inputs.who-to-greet }}.
