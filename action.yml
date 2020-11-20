@@ -12,18 +12,12 @@ outputs:
 runs:
   using: "composite"
   steps: 
-    - name: echo $PWD
+    - name: ls
       shell: bash
-      run: echo $PWD
-    - name: pwd
+      run: ls
+    - name: ls test/
       shell: bash
-      run: pwd
-    - name: env
-      shell: bash
-      run: env
-    - name: echo1
-      run: echo v2
-      shell: bash
+      run: ls test/
     - name: echo2
       run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
