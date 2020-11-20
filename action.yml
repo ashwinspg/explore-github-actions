@@ -13,6 +13,7 @@ runs:
   using: "composite"
   steps: 
     - name: env
+      shell: bash
       run: env
     - name: echo1
       run: echo v2
