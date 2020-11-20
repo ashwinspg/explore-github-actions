@@ -26,9 +26,15 @@ jobs:
         name: A job to say hello
         steps:
             -   uses: actions/checkout@v2
+            -   name: env
+                run: env
             -   id: foo
-                uses: ashwinspg/explore-github-actions@23eabf9310315ad240ba71ca7a1417371ce8d347
+                uses: ashwinspg/explore-github-actions@master
                 with:
                     who-to-greet: 'Mona the Octocat'
+                env:
+                    env_key: env_value
+            -   name: env
+                run: env
             -   run: echo random-number ${{ steps.foo.outputs.random-number }} 
                 shell: bash
