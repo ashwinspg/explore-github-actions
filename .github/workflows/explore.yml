@@ -19,7 +19,7 @@ jobs:
             -   name: echo
                 run: |
                     echo -e "\npre"
-                    echo ${{ matrix.path }}
+                    echo ${{ matrix.lambda-function.path }}
                     echo -e "\npost"
 
 
