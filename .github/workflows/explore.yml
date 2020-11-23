@@ -5,7 +5,7 @@ on: push
 jobs:
     build:
         name: Build
-        runs-on: ${{ matrix.os }}
+        runs-on: ubuntu-latest
         strategy:
             matrix:
                 include:
