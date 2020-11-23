@@ -8,19 +8,19 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                compiler:
-                        -   os: [ubuntu-latest]
-                            build-type: [Debug, Release]
-                        -   os: [ubuntu-latest, macos-latest]
-                            build-type: ''
-                        -   sanitize: [true, false]
-                os: [windows-latest]
-                build-type: [Debug, Release]
-                arch: [Win32, x64]
+                lambda-function:
+                    -   id: 'movies-lambda'
+                        path: 'movies-lambda'
+                        template-file-path: 'movies-lambda'
+                    -   id: 'movies-sync-lambda'
+                        path: 'movies-lambda/sync'
+                        template-file-path: 'movies-lambda'
         steps:
             -   name: echo
                 run: |
-                    echo ${{ toJson(matrix) }}
+                    echo -e "\npre"
+                    echo ${{ matrix.path }}
+                    echo -e "\npost"
 
 
     # hello_world_job:
