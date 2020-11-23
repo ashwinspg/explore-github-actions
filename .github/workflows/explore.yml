@@ -8,16 +8,25 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                a: ['aaa', 'ccc']
-                b: ['bbb', 'ddd']
                 include:
+                    -   a: 'aaa'
+                        b: 'bbb'
                     -   a: 'ccc'
-                        b: 'eee'
+                        b: 'ddd'
         steps:
             -   name: echo
                 run: |
                     echo ${{ matrix.a }}
                     echo ${{ matrix.b }}
+                    sleep 3
+
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        steps:
+            -   name: echo
+                run: echo deploy
+
 
     # hello_world_job:
     #     runs-on: ubuntu-latest
