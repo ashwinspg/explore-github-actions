@@ -8,24 +8,24 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                include:
-                    -   a: 'aaa'
-                        b: 'bbb'
-                    -   a: 'ccc'
-                        b: 'ddd'
+                compiler:
+                    -   id: gcc
+                        os: [ubuntu-latest]
+                        build-type: [Debug, Release]
+                    -   id: clang
+                        os: [ubuntu-latest, macos-latest]
+                        build-type: ''
+                    -   id: Debug
+                        sanitize: [true, false]
+                    -   id: Release
+                    -   id: msvc
+                os: [windows-latest]
+                build-type: [Debug, Release]
+                arch: [Win32, x64]
         steps:
             -   name: echo
                 run: |
-                    echo ${{ matrix.a }}
-                    echo ${{ matrix.b }}
-                    sleep 3
-
-    deploy:
-        needs: build
-        runs-on: ubuntu-latest
-        steps:
-            -   name: echo
-                run: echo deploy
+                    echo ${{ matrix }}
 
 
     # hello_world_job:
