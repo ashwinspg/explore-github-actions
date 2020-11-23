@@ -6,35 +6,35 @@ on:
     # - 'test/**'
 
 jobs:
-    build1:
-        name: Build1
-        runs-on: ubuntu-latest
+    build:
+        name: Build
+        runs-on: ${{ matrix.os }}
+        strategy:
+            matrix:
+                os: [macos-latest, ubuntu-18.04]
+                node: [4, 6, 8]
+                exclude:
+                # excludes node 4 on macOS
+                    -   os: macos-latest
+                        node: 4
         steps:
             -   name: echo
-                run: echo build1
+                run: echo build
 
-    build2:
-        name: Build2
-        needs: build1
-        runs-on: ubuntu-latest
-        steps:
-            -   name: echo
-                run: echo build2
-
-    hello_world_job:
-        runs-on: ubuntu-latest
-        name: A job to say hello
-        defaults:
-            run:
-                working-directory: test
-        steps:
-            -   uses: actions/checkout@v2
-            -   name: echo
-                run: echo ${{ github.workspace }}
-            -   id: foo
-                uses: ashwinspg/explore-github-actions@master
-                with:
-                    who-to-greet: 'Mona the Octocat'
-                    path: ./test                    
-            -   run: echo random-number ${{ steps.foo.outputs.random-number }} 
-                shell: bash
+    # hello_world_job:
+    #     runs-on: ubuntu-latest
+    #     name: A job to say hello
+    #     defaults:
+    #         run:
+    #             working-directory: test
+    #     steps:
+    #         -   uses: actions/checkout@v2
+    #         -   name: echo
+    #             run: echo ${{ github.workspace }}
+    #         -   id: foo
+    #             uses: ashwinspg/explore-github-actions@master
+    #             with:
+    #                 who-to-greet: 'Mona the Octocat'
+    #                 path: ./test                    
+    #         -   run: echo random-number ${{ steps.foo.outputs.random-number }} 
+    #             shell: bash
