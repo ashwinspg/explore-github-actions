@@ -8,11 +8,11 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
+                a: ['aaa', 'ccc']
+                b: ['bbb', 'ddd']
                 include:
-                    -   a: 'aaa'
-                        b: 'bbb'
                     -   a: 'ccc'
-                        b: 'ddd'
+                        b: 'eee'
         steps:
             -   name: echo
                 run: |
