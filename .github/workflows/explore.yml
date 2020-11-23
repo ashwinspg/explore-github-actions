@@ -16,7 +16,7 @@ jobs:
                 exclude:
                 # excludes node 4 on macOS
                     -   os: macos-latest
-                        node: 4
+                        # node: 4
         steps:
             -   name: echo
                 run: echo build
