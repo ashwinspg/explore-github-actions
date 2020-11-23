@@ -25,7 +25,7 @@ jobs:
         steps:
             -   name: echo
                 run: |
-                    echo ${{ matrix }}
+                    echo ${{ toJson(matrix) }}
 
 
     # hello_world_job:
