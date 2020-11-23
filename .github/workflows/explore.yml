@@ -9,16 +9,11 @@ jobs:
         strategy:
             matrix:
                 compiler:
-                    -   id: gcc
-                        os: [ubuntu-latest]
-                        build-type: [Debug, Release]
-                    -   id: clang
-                        os: [ubuntu-latest, macos-latest]
-                        build-type: ''
-                    -   id: Debug
-                        sanitize: [true, false]
-                    -   id: Release
-                    -   id: msvc
+                        -   os: [ubuntu-latest]
+                            build-type: [Debug, Release]
+                        -   os: [ubuntu-latest, macos-latest]
+                            build-type: ''
+                        -   sanitize: [true, false]
                 os: [windows-latest]
                 build-type: [Debug, Release]
                 arch: [Win32, x64]
