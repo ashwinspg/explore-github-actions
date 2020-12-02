@@ -17,7 +17,7 @@ jobs:
 
             -   name: pwd
                 run: pwd
-                working-directory: test1
+                working-directory: ./test1
 
 
     # hello_world_job:
