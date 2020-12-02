@@ -10,11 +10,11 @@ jobs:
             run:
                 working-directory: test
         steps:
-            -   name: ls
-                run: ls
+            -   name: pwd
+                run: pwd
 
-            -   name: ls
-                run: ls
+            -   name: pwd
+                run: pwd
                 working-directory: test1
 
 
