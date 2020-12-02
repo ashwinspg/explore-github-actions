@@ -6,16 +6,16 @@ jobs:
     build:
         name: Build
         runs-on: ubuntu-latest
-        # defaults:
-        #     run:
-        #         working-directory: test
+        defaults:
+            run:
+                working-directory: test
         steps:
             -   name: ls
                 run: ls
 
             -   name: ls
                 run: ls
-                working-directory: test1
+                # working-directory: ./test1
 
 
     # hello_world_job:
