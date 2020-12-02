@@ -6,21 +6,16 @@ jobs:
     build:
         name: Build
         runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                lambda-function:
-                    -   id: 'movies-lambda'
-                        path: 'movies-lambda'
-                        template-file-path: 'movies-lambda'
-                    -   id: 'movies-sync-lambda'
-                        path: 'movies-lambda/sync'
-                        template-file-path: 'movies-lambda'
+        defaults:
+            run:
+                working-directory: test
         steps:
-            -   name: echo
-                run: |
-                    echo -e "\npre"
-                    echo ${{ matrix.lambda-function.path }}
-                    echo -e "\npost"
+            -   name: ls
+                run: ls
+
+            -   name: ls
+                run: ls
+                working-directory: test1
 
 
     # hello_world_job:
