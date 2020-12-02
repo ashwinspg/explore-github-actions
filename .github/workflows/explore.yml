@@ -6,9 +6,9 @@ jobs:
     build:
         name: Build
         runs-on: ubuntu-latest
-        defaults:
-            run:
-                working-directory: test
+        # defaults:
+        #     run:
+        #         working-directory: test
         steps:
             -   name: ls
                 run: ls
