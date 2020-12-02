@@ -9,6 +9,7 @@ jobs:
         defaults:
             run:
                 working-directory: test
+                shell: bash
         steps:
             -   name: pwd
                 run: pwd
