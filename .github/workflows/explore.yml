@@ -9,13 +9,14 @@ jobs:
         defaults:
             run:
                 working-directory: test
-                shell: bash
         steps:
-            -   name: pwd
-                run: pwd
+            -   uses: actions/checkout@v2
 
-            -   name: pwd
-                run: pwd
+            -   name: ls
+                run: ls
+
+            -   name: ls
+                run: ls
                 working-directory: test1
 
 
