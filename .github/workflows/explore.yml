@@ -16,11 +16,11 @@ jobs:
                 with:
                     files: |
                         swagger/invalid.yml
-            -   name: swagger-cli
-                uses: vaibhav-jain/spectral-action/@v2.6
+            -   name: Validate OpenAPI definition
+                uses: char0n/swagger-editor-validate@v1
                 with:
-                    file_path: swagger/valid.yml
-            -   name: swagger-cli
-                uses: vaibhav-jain/spectral-action/@v2.6
+                    definition-file: swagger/valid.yml
+            -   name: Validate OpenAPI definition
+                uses: char0n/swagger-editor-validate@v1
                 with:
-                    file_path: swagger/invalid.yml
+                    definition-file: swagger/invalid.yml
