@@ -16,3 +16,11 @@ jobs:
                 with:
                     files: |
                         swagger/invalid.yml
+            -   name: swagger-cli
+                uses: vaibhav-jain/spectral-action/@v2.6
+                with:
+                    file_path: swagger/valid.yml
+            -   name: swagger-cli
+                uses: vaibhav-jain/spectral-action/@v2.6
+                with:
+                    file_path: swagger/invalid.yml
