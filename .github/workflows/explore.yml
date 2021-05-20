@@ -10,8 +10,8 @@ jobs:
             -   uses: mbowman100/swagger-validator-action@master
                 with:
                     files: |
-                        swagger/valid.yml
+                        ./swagger/valid.yml
             -   uses: mbowman100/swagger-validator-action@master
                 with:
                     files: |
-                        swagger/invalid.yml
+                        ./swagger/invalid.yml
