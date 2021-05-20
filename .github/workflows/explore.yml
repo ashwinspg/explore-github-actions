@@ -16,3 +16,11 @@ jobs:
                 with:
                     files: |
                         swagger/invalid.yml
+            -   name: Validate OpenAPI definition
+                uses: char0n/swagger-editor-validate@v1
+                with:
+                    definition-file: swagger/valid.yml
+            -   name: Validate OpenAPI definition
+                uses: char0n/swagger-editor-validate@v1
+                with:
+                    definition-file: swagger/invalid.yml
