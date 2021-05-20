@@ -1,39 +1,17 @@
-name: Build
+name: Validate
 
 on: push
 
 jobs:
-    build:
-        name: Build
+    validate:
+        name: Validate
         runs-on: ubuntu-latest
-        defaults:
-            run:
-                working-directory: test
         steps:
-            -   uses: actions/checkout@v2
-
-            -   name: pwd
-                run: pwd
-
-            -   name: pwd
-                run: pwd
-                working-directory: ./test1
-
-
-    # hello_world_job:
-    #     runs-on: ubuntu-latest
-    #     name: A job to say hello
-    #     defaults:
-    #         run:
-    #             working-directory: test
-    #     steps:
-    #         -   uses: actions/checkout@v2
-    #         -   name: echo
-    #             run: echo ${{ github.workspace }}
-    #         -   id: foo
-    #             uses: ashwinspg/explore-github-actions@master
-    #             with:
-    #                 who-to-greet: 'Mona the Octocat'
-    #                 path: ./test                    
-    #         -   run: echo random-number ${{ steps.foo.outputs.random-number }} 
-    #             shell: bash
+            -   uses: mbowman100/swagger-validator-action@master
+                with:
+                    files: |
+                        swagger/valid.yml
+            -   uses: mbowman100/swagger-validator-action@master
+                with:
+                    files: |
+                        swagger/invalid.yml
